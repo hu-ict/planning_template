@@ -4,6 +4,7 @@ week_row_colors = ["#ffffff", "#f0f0f0"]
 sprint_colors = ["#e6302b", "#00a1e1"]
 week_days = ["ma", "di", "wo", "do", "vr"]
 course_id = "44850"
+template_filename = "planning_template_sep25.csv"
 
 def get_row_color(index):
     return week_row_colors[index % 2]
@@ -115,7 +116,7 @@ def export_planning(planning_html_filename, weeks):
         outfile.write('\n</table>');
 
 
-weeks = read_weeks("planning_template_sep25.csv")
+weeks = read_weeks(template_filename)
 sprints = determine_sprints(weeks)
 print(sprints)
 export_planning("planning.html", weeks)
